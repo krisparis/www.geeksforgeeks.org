@@ -28,7 +28,7 @@ public class Factorial
   public static void main(String[] args)
   {
     int num = 5;
-    System.out.print("Factorial of "+ num + " is " + factorialByIteration(5));
+    System.out.print("Factorial of "+ num + " is " + factorialByIteration(num));
   }
 
 }
