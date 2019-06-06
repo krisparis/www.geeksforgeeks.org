@@ -45,3 +45,59 @@
 *  So (sum - (d_i + d_j) ) mod 3 = 0
 *
 */
+
+public class DivByThreeDigitRemover {
+	static int divisible(String num) {
+		int n = num.length();
+
+		// Sum up all the digits of num.
+		int sum = 0;
+		for (int i = 0; i < n; i++) {
+			sum += (int) (num.charAt(i));
+		}
+
+		if (sum % 3 == 0) {
+			// CASE 1:
+			// The sum of digits modulo 3 is equal to zero. So no digits have to
+			// be removed.
+			return 0;
+		}	
+		// if there is single digit,
+		// then it is not possible
+		// to remove one digit.
+		if (n == 1) {
+			return -1;
+		}
+
+		// CASE 2
+		// Traverse through the number
+		// and find out if any number
+		// on removal makes the sum
+		// divisible by 3
+		for (int i = 0; i < n; i++) {
+			if (sum % 3 == (num.charAt(i) - '0') % 3) {
+				return 1;
+			}
+		}	
+		
+		// If there are two numbers
+		// then it is not possible
+		// to remove two digits.
+		if (n == 2) {
+			return -1;
+		}
+		// CASE 3
+		// Otherwise we can always
+		// remove 2 digits
+		// and make the resulting number divisible by 3.
+		return 2;
+	}
+
+	// Driver Code
+	public static void main(String[] args) {
+
+		String num = "1234";
+		System.out.println(divisible(num));
+	}
+}
+
