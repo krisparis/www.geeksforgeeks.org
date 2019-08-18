@@ -1,8 +1,6 @@
-package divisibility;
-
 public class NbSubstringsDivisibleBySix_IterativeMethod {
 
-	static void print(int startIndex, int sndIndex, int currDigitSum, char s[]) {
+	static void print(int startIndex, int sndIndex, int currDigitSum, char[] s) {
 		StringBuilder sb = new StringBuilder();
 		for (int k = startIndex; k <= sndIndex; k++) {
 			sb.append(s[k]);
@@ -11,7 +9,7 @@ public class NbSubstringsDivisibleBySix_IterativeMethod {
 				+ " (" + sndIndex + ")" + ", currDigitSum: " + currDigitSum);
 	}
 
-	static int countDivBySixFromStartIndex(int startIndex, char s[]) {
+	static int countDivBySixFromStartIndex(int startIndex, char[] s) {
 		int result = 0;
 		int digitSum = 0;
 		for (int j = startIndex; j < s.length; j++) {
